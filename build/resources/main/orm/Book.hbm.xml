@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                "-//Hibernate/Hibernate Mapping DTD//EN"
+                "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="Model.Book"
+       table="Books">
+    <id name="code" column="code">
+        </id>
+    <property
+            name="title"
+            column="title"/>
+    <property
+            name="author"
+            column="author"/>
+    <property
+            name="description"
+            column="description"/>
+    <property
+            name="pagesFromBook"
+            length="1000"
+            column="pagesFromBook"/>
+    <property
+            name="available"
+            column="available"/>
+
+    <property name="category">
+        <type name="org.hibernate.type.EnumType">
+            <param name="enumClass">Model.BookCategory</param>
+            <param name="type">12</param>
+        </type>
+    </property>
+
+    </class>
+
+</hibernate-mapping>
